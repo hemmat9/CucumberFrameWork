@@ -1,0 +1,146 @@
+Frame Work
+Cucumber = tool + framework
+
+Framework means
+1-Organized Structure
+2-Proper folder Hierarchy
+3-Separate place for separate codes
+4-Single execution point
+
+Maven is a built-management tool. it means Maven Can help us to build a project structure and manage dependencies that
+we need in our framework and also execute the scripts.
+we use maven as build management tool it helps us to build a framework
+
+Main folder belongs to developers in our Maven-cucumber framework so we as testers don’t need it.
+
+Test folder belongs to testers
+Java with test folder belongs to testers it comes under category of resources.
+
+group id - company name
+artifact id - project name
+
+main folder - for development team
+test folder - for testing code
+
+java folder is for coding part
+resources for non-coding part
+
+pom.xml we use to add dependency
+it is a configuration file which is considered as a backbone of the maven project
+
+Cucumber:
+it is a tool that supports BDD(Behavioral Driven Development) framework, BDD means writing scenarios in Gherkin Language which is simple and plain English sentences.
+and also supports DDT (data driven test). which means it is a hybrid framework
+
+---(we write scenarios  based on behaviors)----
+Keywords of Gherkin Language: feature, Background, scenario
+
+    Given - (precondition)     Given user is navigated to the HRMS application
+    When  - (Actions)          When the user enters username and password
+    And   - (supporting tag)   this tag can come with every other keyword- user click on login button
+    Then  - (expected output)  result - user navigate to the dashboard page of the application
+
+    Feature - (.feature --to write scenario we use feature file, we write scenarios in Gherkin language with it specific keywords)
+    scenario --(test case)
+
+User story 12345- - Given user should be able to search for an employee (written by BA)
+
+Acceptance criteria (written by Product owner)
+    1- search by id
+    2- search by name
+
+Id = 23638000
+Name = XYZT
+1.
+Given user opens browser and navigate to HRMS application
+And user is logged in as an admin
+And user is on employee list page
+When user enters valid employee ID
+And user clicks on search button
+Then user see employee in the employee table
+
+2.
+Given user opens browser and navigate to HRMS application
+And user is logged in as an admin
+And user is on employee list page
+When user enters firstname and lastname
+And user clicks on search button
+Then user see employee in the employee table
+
+We need the following dependencies for our framework
+Selenium -
+Java -
+Cucumber -
+Excel -
+
+                                        ==============Class3======================
+
+Why we use Cucumber while we have Selenium and TestNg?
+Cucumber as a tool is used :
+to increase transparency/ to reduce communication gap/ it supports BDD (Behavior Driven Development)/Gherkin Language and DDT (Data Driven Testing).
+it focuses on end-user point of view.
+
+Feature file: we write test scenarios in our .feature file, and we can have multiple scenarios in one .feature file
+
+Step definition - to Implement the code for the steps written in feature file, we use step definitions in our steps directory
+
+Runner class is the execution point in our Framework, by having Cucumber options it gives us the ability to specify any kind of configuration that we want
+in our test cases.
+we have following options in our runner class.
+
+feature, (we use features to provide the path of all the feature files)
+glue,(glue is where we find implementation for gherkin steps we provide the path of package where we defined all the steps)
+dryRun, (if we set it to true it will stop actual execution, and it will quickly scan all the gherkin steps whether they are implemented or not)
+monochrome, (if we set it to true, it will omit all those extra and un-necessary lines from the console)
+strict, ==> it is replaced and replaced by dryRun
+tags, (tags will identify the scenarios based on the tag we provide to the feature file)
+plugin (by implementing a plugin and giving it the path of target directory it will generate us the test report)
+
+Background =  it applicable only for one feature file,
+here we add common steps among all the scenarios
+
+
+=====================================Class4===========================
+Runner class - to configure the execution flow of our test cases
+@Runwith - from junit
+@Cucumberoptions - to provide configuration
+
+Options are as bellow for the runner class:
+feature - path of feature files
+glue - it is path of the step definition for feature files, (we glue/stick the steps to the feature file) every feature file should have steps definition.
+dryRun - by using this option and set it to true, it stops the actual execution and scans if there is any step which are not implemented, if there is not an implemented step it
+will give you the sniped to implement
+monochrome - it removes all the irrelevant information and extra information from the console
+tag - for grouping
+plugins ("pretty","html:target/cucumber.html") to generate us a report of our test case in form of html into our target directory. it has more purpose
+
+we can not use same steps for all classes - we will get error, for example Given user Navigated to HRMS application
+
+Background - if we have multiple scenarios and the starting point is similar for all the scenarios so we keep those steps in one place under Background keyword
+
+Hooks - we use hooks to provide pre-conditions and post-conditions, it will before and after each scenario, we should provide hooks under the package where our steps are available.
+
+in a class: running order is like : hooks -----> background -----> scenario------> hooks by having the runner class.
+
+================================class05==========================
+Background - it is applicable to one feature file
+Hooks - it is applicable to all the feature files (@Before @After) precondition and post-condition
+
+
+Passing the data
+passing the data directly from feature file scenario
+passing the data from @example table from scenario outline to achieve ddt
+from data table
+
+data table vs examples
+data table is applicable to just a single step
+examples table is applicable to complete scenario
+
+
+============================Class6==============================
+this framework supports BDD and DDT which means it is a hybrid framework.
+
+
+
+
+
