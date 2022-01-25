@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DashboardSteps extends CommonMethods {
+
     @Then("verify all the dashboard tabs")
     public void verify_all_the_dashboard_tabs(DataTable dataTable) {
         // DahsboardPage dash = new DahsboardPage();

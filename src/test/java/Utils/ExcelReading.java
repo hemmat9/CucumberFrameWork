@@ -19,6 +19,8 @@ public class ExcelReading {
 
     public static void openExcel(String filePath){
 
+        //load excel file
+
         try {
             FileInputStream fis = new FileInputStream(filePath);
             book = new XSSFWorkbook(fis);
@@ -28,7 +30,6 @@ public class ExcelReading {
             e.printStackTrace();
         }
     }
-
     public static void getSheet(String sheetName){
         sheet = book.getSheet(sheetName);
     }

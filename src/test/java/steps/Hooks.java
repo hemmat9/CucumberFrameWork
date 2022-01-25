@@ -3,6 +3,7 @@ package steps;
 import Utils.CommonMethods;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hooks extends CommonMethods {
 
@@ -11,8 +12,20 @@ public class Hooks extends CommonMethods {
     public void start(){
         openBrowserAndLaunchApplication();
     }
+
     @After
-    public void end(){
+    public void end(Scenario scenario){
+        byte[] pic;
+        //scenario class from cucumber holds the complete information of your execution
+        if(scenario.isFailed()){
+            pic = takeScreenshot("failed/" + scenario.getName());
+        }else{
+            pic = takeScreenshot("passed/"+ scenario.getName());
+        }
+
+        //it will attach the pics in report
+        scenario.attach(pic,"image/png", scenario.getName());
         closeBrowser();
     }
+
 }

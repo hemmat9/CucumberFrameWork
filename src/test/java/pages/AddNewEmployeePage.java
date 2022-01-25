@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddNewEmployeePage extends CommonMethods {
-
     @FindBy(id="firstName")
     public WebElement firstName;
 
@@ -37,8 +36,17 @@ public class AddNewEmployeePage extends CommonMethods {
     @FindBy(id="btnSave")
     public WebElement saveButton;
 
+    @FindBy(xpath="//*[@value='Edit']")
+    public WebElement editOption;
+
+    @FindBy(id="personal_cmbMarital")
+    public WebElement maritalStatus;
+
+    @FindBy(id="personal_cmbNation")
+    public WebElement nationality;
+
+
     public AddNewEmployeePage(){
         PageFactory.initElements(driver, this);
     }
 }
-

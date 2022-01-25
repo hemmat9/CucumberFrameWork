@@ -6,4 +6,4 @@ Feature: Dashboard functionality
     And user clicks on login button
     Then admin user is successfully logged in
     Then verify all the dashboard tabs
-    |Admin|PIM|Leave|Time|Recruitment|Performance|Dashboard|Directory|
+      |Admin|PIM|Leave|Time|Recruitment|Performance|Dashboard|Directory|

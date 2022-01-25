@@ -140,6 +140,31 @@ examples table is applicable to complete scenario
 ============================Class6==============================
 this framework supports BDD and DDT which means it is a hybrid framework.
 
+====================Class7====================================
+
+Page object model design pattern
+Why it is called model pattern? because it is a pattern to organize our codes according to this concept and pattern.
+it allows us to create according to the pages available in the application we place all the locators and functions
+to this particular page in respective class.
+
+
+=============================Class8==============================
+recap -
+using POM to write functions in respective classes
+
+use common methods to write common functions in it such as
+sendtext
+click
+
+
+to execute from cmd/ terminal -
+open the cmd/terminal in the project root where pom.xml is availablen and then execute below commands
+
+mvn clean
+mvn test
+mvn clean test
+mvn test -Dcucumber.filter.tags="@tagname"
+
 
 
 

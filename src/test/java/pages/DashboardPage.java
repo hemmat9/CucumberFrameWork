@@ -9,7 +9,6 @@ import java.util.List;
 
 public class DashboardPage extends CommonMethods {
 
-
     @FindBy(id="welcome")
     public WebElement welcomeMessage;
 
@@ -29,6 +28,4 @@ public class DashboardPage extends CommonMethods {
     public DashboardPage(){
         PageFactory.initElements(driver,this);
     }
-
-
 }
